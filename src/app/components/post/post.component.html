@@ -1,0 +1,24 @@
+<section class="row" *ngIf="!error">
+  <article class="col-md-8 offset-md-2">
+    <div class="card">
+      <div class="card-body">
+          <h2 class="card-title">{{postBody.title}}</h2>
+          <p class="card-text">{{postBody.body}}</p>
+          <hr>
+          <a class="btn btn-secondary" [routerLink]="['../../author', postBody.userID]">Go To Author - {{postBody.userID}}</a>
+      </div>
+    </div>
+    
+    <div class="comments-block bg-dark">
+      <h3 class="h3 text-white">Comments section</h3>
+      <div class="card" *ngFor="let comment of postComments">
+        <div class="card-body">
+            <h5 class="card-title">{{comment.name}}</h5>
+            <h6 class="card-subtitle">{{comment.email}}</h6>
+            <p class="card-text">{{comment.body}}</p>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+<div class="error-content" *ngIf="error"><h1 style="text-align:center">Error, redirecting to home!</h1></div>

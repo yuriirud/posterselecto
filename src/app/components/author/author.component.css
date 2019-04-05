@@ -1,0 +1,14 @@
+.post {
+    display: flex;
+    padding: 14px 16px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    margin-top: 14px;
+}
+.posts {
+    margin-top: 14px;
+}
+section {
+    padding: 14px 5px;
+    margin-top: 14px;
+}

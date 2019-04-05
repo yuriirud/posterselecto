@@ -1,0 +1,15 @@
+<section>
+<h1 class="h1 text-center text-white">All posts</h1>
+<div class="row">
+  <article class="post col-md-8 offset-md-2" *ngFor="let post of allPosts | paginate: {itemsPerPage: 12, currentPage: p}">
+    <div class="card">
+      <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <a class="btn btn-secondary" [routerLink]="['author', post.userID]">Author - {{post.userID}}</a>
+          <a class="card-link btn btn-primary" [routerLink]="['post', post.id]">Read full post</a>
+      </div>
+    </div>
+  </article>
+</div>
+<pagination-controls style="text-align:center" (pageChange)="p = $event"></pagination-controls>
+</section>

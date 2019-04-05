@@ -1,0 +1,20 @@
+<section *ngIf="!error" class="row">
+    <div class="card col-md-10 offset-md-1">
+      <div class="card-body">
+        <h2 class="h2 card-title">Name : {{author.name}}</h2>
+        <h5 class="h5 card-subtitle">A.K.A : {{author.username}}</h5>
+        <h5>Email : {{author.email}}</h5>
+        <h3>Address : {{author.address.street}}, {{author.address.city}}</h3>
+        <h4>{{author.phone}}</h4>
+        <h6>{{author.website}}</h6>
+      </div>
+    </div>
+    <div class="posts col-md-8 offset-md-2">
+      <h2 class="h2 text-white"> Author`s posts</h2>
+          <article *ngFor="let post of authorPosts" class="post bg-dark text-white">
+                  <h6 class="h6 ">{{post.title}}</h6>
+                  <a class="btn btn-primary" [routerLink]="['../../post', post.id]">Read Full Post</a>
+          </article>
+    </div>
+  </section>
+<div class="error-content" *ngIf="error"><h1 style="text-align:center">Error, please enter valid query!</h1></div>
